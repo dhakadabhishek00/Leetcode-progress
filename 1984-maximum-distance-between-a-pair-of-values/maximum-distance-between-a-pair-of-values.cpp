@@ -8,9 +8,9 @@ public:
         while (i < n && j < m) {
             if (nums1[i] <= nums2[j]) {
                 ans = max(ans, j - i);
-                j++;  // try to extend distance
+                j++;  
             } else {
-                i++;  // move i forward to satisfy condition
+                i++;  
             }
         }
         return ans;
