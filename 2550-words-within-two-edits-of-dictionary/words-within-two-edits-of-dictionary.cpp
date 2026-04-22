@@ -11,16 +11,16 @@ public:
         return c<=2;
    }
     vector<string> twoEditWords(vector<string>& queries, vector<string>& dictionary) {
-       
           vector<string>ans;
-         for(string word:queries){
-            for(string word2:dictionary){
-                       int n1=word.length();
-                       int n2=word2.length();
+          
+         for(int i=0;i<queries.size();i++){
+            for(int j=0;j<dictionary.size();j++){
+                       int n1=queries[i].length();
+                       int n2=dictionary[j].length();
                        if(n1!=n2)continue;
-                       if(isvalid(word,word2)){
+                       if(isvalid(queries[i],dictionary[j])){
                         
-                          ans.push_back(word);
+                          ans.push_back(queries[i]);
                          
                           break;
                        }
