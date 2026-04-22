@@ -11,8 +11,7 @@ public:
         return c<=2;
    }
     vector<string> twoEditWords(vector<string>& queries, vector<string>& dictionary) {
-         map<string,int>mp;
-         set<string>wrd;
+       
           vector<string>ans;
          for(string word:queries){
             for(string word2:dictionary){
