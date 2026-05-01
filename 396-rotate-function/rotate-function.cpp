@@ -12,11 +12,9 @@ public:
         ans=mul;
         for(int i=n-1;i>=0;i--){
                mul=mul+sum-nums[i]*n;
-               
-               cout<<mul<<"\n";
                ans=max(ans,mul);
         }
-         ans=max(ans,mul);
+        
         return ans;
     }
 };
