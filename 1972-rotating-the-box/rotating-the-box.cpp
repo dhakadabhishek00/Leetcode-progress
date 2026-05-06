@@ -14,10 +14,7 @@ public:
                                 }
                                 
                     }
-                    // for(char a:v){
-                    //    cout<<a<<" ";
-                    // }
-                    // cout<<"\n";
+                   
               }
               int n=boxGrid.size();
               int m=boxGrid[0].size();
@@ -26,10 +23,10 @@ public:
                 vector<char>t;
                   for(int j=n-1;j>=0;j--){
                        t.push_back(boxGrid[j][i]);
-                      //  cout<<boxGrid[j][i]<<" ";
+                     
                   }
                   ans.push_back(t);
-                  // cout<<"\n";
+                 
               }
 
               return ans;
