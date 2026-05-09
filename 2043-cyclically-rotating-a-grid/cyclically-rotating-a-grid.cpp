@@ -5,23 +5,23 @@ public:
                int m=grid[0].size();
                vector<int>arr;
                for(int i=k;i<m-k;i++){
-                // cout<<grid[k][i]<<" ";
+               
                     arr.push_back(grid[k][i]);
                }
-              //  cout<<"\n";
+              
                
                for(int i=k+1;i<n-k;i++){
-                    // cout<<grid[i][m-k-1]<<" ";
+                   
                     arr.push_back(grid[i][m-k-1]);
                }
                 
                for(int i=m-k-2;i>=k;i--){
-                    // cout<<grid[n-k-1][i]<<" ";
+                  
                     arr.push_back(grid[n-k-1][i]);
                }
                 
                for(int i=n-k-2;i>k;i--){
-                    // cout<<grid[i][k]<<" ";
+                   
                     arr.push_back(grid[i][k]);
                }
               
@@ -65,12 +65,7 @@ public:
           int s=min(n,m);
           for(int i=0;i<(s/2);i++)
              rotate(grid,i,k);
-           for(int i=0;i<n;i++){
-               for(int j=0;j<m;j++){
-                  cout<<grid[i][j]<<" ";
-               }
-               cout<<"\n";
-           }
+          
            return grid;
     }
 };
