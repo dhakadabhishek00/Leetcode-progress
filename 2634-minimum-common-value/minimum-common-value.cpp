@@ -1,7 +1,6 @@
 class Solution {
 public:
     int getCommon(vector<int>& nums1, vector<int>& nums2) {
-         
            int n=nums1.size();
            int n2=nums2.size();
            int i=0;
