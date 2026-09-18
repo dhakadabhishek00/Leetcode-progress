@@ -40,7 +40,7 @@ public:
          if(ans.size()==0){
            ans+="/";
          }
-         cout<<ans;
+        
          return ans;
     }
 };
