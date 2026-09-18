@@ -1,46 +1,24 @@
 class Solution {
 public:
-    string getdir(string path,int &i){
-           string ans="";
-           while(i<path.size() && path[i]!='/'){
-                 ans+=path[i];
-                 i++;
-           }
-        
-           return ans;
-
-    }
     string simplifyPath(string path) {
-         stack<string>store;
-         int i=0;
-         int n=path.size();
-         while(i<n){
-              string str=getdir(path,i);
-              if(str.size()==0 || str=="."){
-                  //nothing
-              }
-              else if(str==".." && store.size()>0){
-                  store.pop();   
-              }
-              
-              else if(str==".." && store.size()==0){
-                  //nothing
-              }
-              else{
-                 store.push(str);
-              }
-              
-              i++;
-         }
-        string ans="";
-         while(!store.empty()){
-           ans="/"+store.top()+ans;
-           store.pop();
-         }
-         if(ans.size()==0){
-           ans+="/";
-         }
-        
-         return ans;
+        vector<string> stack;
+        stringstream ss(path);
+        string token;
+
+        while (getline(ss, token, '/')) {
+            if (token == "" || token == ".") {
+                continue;
+            } else if (token == "..") {
+                if (!stack.empty()) stack.pop_back();
+            } else {
+                stack.push_back(token);
+            }
+        }
+
+        string ans;
+        for (string &dir : stack) {
+            ans += "/" + dir;
+        }
+        return ans.empty() ? "/" : ans;
     }
 };
